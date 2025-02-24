@@ -93,3 +93,92 @@
 .logout-button:hover {
   background-color: #c0392b; /* Darker red on hover */
 }
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (max-width: 1199px) {
+  .navbar ul {
+    gap: 15px;
+  }
+  
+  .navbar ul li a {
+    padding: 8px 12px;
+  }
+}
+
+/* Tablet screens (768px to 991px) */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  
+  .navbar ul {
+    gap: 10px;
+  }
+}
+
+/* Mobile landscape (576px to 767px) */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .navbar .brand {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .navbar ul li {
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .logout-button {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Mobile portrait (575px and below) */
+@media (max-width: 575px) {
+  .navbar {
+    border-radius: 0;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* For devices that support hover */
+@media (hover: hover) {
+  .navbar ul li a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* For dark mode preference */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: #1a2634;
+  }
+}
