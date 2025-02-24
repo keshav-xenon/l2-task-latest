@@ -1,0 +1,95 @@
+/* Navbar container */
+.navbar {
+  background-color: #2c3e50; /* Dark blue background */
+  padding: 15px 30px; /* Add padding for spacing */
+  display: flex;
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it stays above other elements */
+  border-radius: 8px;
+}
+
+/* Navbar brand/logo */
+.navbar .brand {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1abc9c; /* Green text color */
+  text-decoration: none;
+  margin-right: auto; /* Push the brand to the left */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar .brand:hover {
+  color: #ffffff; /* White text on hover */
+}
+
+/* Navbar links container */
+.navbar ul {
+  list-style: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display links in a row */
+  justify-content: center; /* Center the links */
+  flex-grow: 1; /* Allow the links to take up available space */
+  gap: 25px; /* Add spacing between links */
+}
+
+/* Navbar links */
+.navbar ul li a {
+  text-decoration: none; /* Remove underline */
+  color: #ecf0f1; /* Light text color */
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px; /* Add padding for clickable area */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for links */
+.navbar ul li a:hover {
+  background-color: #1abc9c; /* Green background */
+  color: #ffffff; /* White text on hover */
+}
+
+/* Active link styling */
+.navbar ul li a.active {
+  background-color: #1abc9c; /* Highlight active link with green */
+  color: #ffffff; /* White text */
+}
+
+/* Responsive navbar for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Reduce spacing between links */
+  }
+}
+
+/* Logout button */
+.logout-button {
+  padding: 8px 15px; /* Adjust padding for a compact size */
+  background-color: #e74c3c; /* Red background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Set a consistent font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  width: auto; /* Ensure the button does not stretch */
+  display: inline-block; /* Prevent the button from taking up extra space */
+  text-align: center; /* Center the text inside the button */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
