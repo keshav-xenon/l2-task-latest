@@ -16,55 +16,61 @@ import Register from "./pages/Register";
 import RemoveBook from "./pages/RemoveBook";
 import SearchBook from "./pages/SearchBook";
 import UpdateBook from "./pages/UpdateBook";
+
 const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Login Route */}
+        {/* Login and Register Routes without background */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* Admin Routes */}
+        
+        {/* Admin Routes with background */}
         <Route
           path="/admin/*"
           element={
-            <>
+            <div className="app-background">
               <AdminNavbar />
-              <Routes>
-                <Route
-                  index={true}
-                  element={<Navigate to={"/admin/add-book"} />}
-                />
-                <Route index={true} path="add-book" element={<AddBook />} />
-                <Route path="remove-book" element={<RemoveBook />} />
-                <Route path="update-book" element={<UpdateBook />} />
-                <Route
-                  path="list-issue-requests"
-                  element={<ListIssueRequests />}
-                />
-              </Routes>
-            </>
+              <div className="content-container">
+                <Routes>
+                  <Route
+                    index={true}
+                    element={<Navigate to={"/admin/add-book"} />}
+                  />
+                  <Route index={true} path="add-book" element={<AddBook />} />
+                  <Route path="remove-book" element={<RemoveBook />} />
+                  <Route path="update-book" element={<UpdateBook />} />
+                  <Route
+                    path="list-issue-requests"
+                    element={<ListIssueRequests />}
+                  />
+                </Routes>
+              </div>
+            </div>
           }
         />
 
-        {/* Reader Routes */}
+        {/* Reader Routes with background */}
         <Route
           path="/reader/*"
           element={
-            <>
+            <div className="app-background">
               <ReaderNavbar />
-              <Routes>
-                <Route
-                  index={true}
-                  element={<Navigate to={"/reader/search-book"} />}
-                />
-                <Route path="search-book" element={<SearchBook />} />
-                <Route
-                  path="raise-issue-request"
-                  element={<RaiseIssueRequest />}
-                />
-                <Route path="profile" element={<ReaderProfile />} />
-              </Routes>
-            </>
+              <div className="content-container">
+                <Routes>
+                  <Route
+                    index={true}
+                    element={<Navigate to={"/reader/search-book"} />}
+                  />
+                  <Route path="search-book" element={<SearchBook />} />
+                  <Route
+                    path="raise-issue-request"
+                    element={<RaiseIssueRequest />}
+                  />
+                  <Route path="profile" element={<ReaderProfile />} />
+                </Routes>
+              </div>
+            </div>
           }
         />
       </Routes>

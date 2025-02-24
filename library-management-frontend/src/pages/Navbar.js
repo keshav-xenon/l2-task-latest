@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation ,useNavigate} from "react-router-dom";
-import "../styles/navbar.css";
+import "/home/xs516-kesjha/Desktop/lms/library-management-frontend/src/styles/navbar.css";
 
 const Navbar = ({ brand, links }) => {
   const location = useLocation(); // Get the current path to highlight the active link

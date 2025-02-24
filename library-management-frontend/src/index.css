@@ -1,10 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Inter", serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+
+.app-background {
+  min-height: 100vh;
+  background-image: url('/home/xs516-kesjha/Desktop/lms/library-management-frontend/public/alexander-grey-eMP4sYPJ9x0-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.content-container {
+
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  min-height: calc(100vh - 120px);
+}
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -13,27 +38,39 @@ body {
   background-color: #f4f4f4;
 }
 
+.login-form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
 .login-form h2 {
-  margin-bottom: 20px;
+  margin-bottom: 2000px;
   text-align: center;
+  color: #333;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15p  x;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #555;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 button {
@@ -44,14 +81,40 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 button:disabled {
   background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #555;
 }
 
 .error {
-  color: red;
+  color: #dc3545;
   font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
