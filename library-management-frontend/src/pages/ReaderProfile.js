@@ -25,7 +25,7 @@ const ReaderProfile = () => {
 
       setError("");
     } catch (err) {
-      setError("Failed to fetch reader data");
+      setError("");
     } finally {
       setLoading(false);
     }

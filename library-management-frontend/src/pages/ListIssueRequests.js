@@ -22,7 +22,7 @@ const ListIssueRequests = () => {
         setRequests(response.data);
       } catch (error) {
         setMessage(
-          error.response?.data?.error || "Failed to fetch issue requests"
+          error.response?.data?.error || ""
         );
       }
     };
