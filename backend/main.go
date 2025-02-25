@@ -9,16 +9,14 @@ import (
 )
 
 func main() {
-	// Connect to the database
+
 	database.ConnectDatabase()
 	router := gin.Default()
 	api := router.Group("/api")
 	routes.AddMigrationRoutes(api, database.DB)
 
-	// Initialize Gin router
 	r := gin.Default()
 
-	// Enable CORS
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:3000"}, // Frontend URL
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -27,9 +25,7 @@ func main() {
 		AllowCredentials: true,
 	}))
 
-	// Setup routes
 	routes.SetupRoutes(r)
 
-	// Start the server
-	r.Run(":8080") // Server will run on http://localhost:8080
+	r.Run(":8080")
 }
