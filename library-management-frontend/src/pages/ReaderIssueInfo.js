@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/list.css"; // Reuse the list styles
+import "../styles/list.css"; 
 
 const ReaderIssueInfo = () => {
   const [readerEmail, setReaderEmail] = useState("");
@@ -10,7 +10,7 @@ const ReaderIssueInfo = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
 
-    const email = localStorage.getItem("email"); // Admin email from local storage
+    const email = localStorage.getItem("email");
     try {
       const response = await axios.get(
         `http://localhost:8080/admin/reader-issue-info`,

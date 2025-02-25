@@ -1,97 +1,94 @@
-/* Navbar container */
+
 .navbar {
-  background-color: #2c3e50; /* Dark blue background */
-  padding: 15px 30px; /* Add padding for spacing */
+  background-color: #2c3e50;
+  padding: 15px 30px; 
   display: flex;
-  justify-content: space-between; /* Space out items */
-  align-items: center; /* Center items vertically */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  position: sticky; /* Make the navbar sticky */
-  top: 0; /* Stick to the top */
-  z-index: 1000; /* Ensure it stays above other elements */
+  justify-content: space-between; 
+  align-items: center; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
   border-radius: 8px;
 }
 
-/* Navbar brand/logo */
+
 .navbar .brand {
   font-size: 28px;
   font-weight: bold;
-  color: #1abc9c; /* Green text color */
+  color: #1abc9c; 
   text-decoration: none;
-  margin-right: auto; /* Push the brand to the left */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  margin-right: auto; 
+  transition: color 0.3s ease;
 }
 
 .navbar .brand:hover {
-  color: #ffffff; /* White text on hover */
+  color: #ffffff;
 }
 
-/* Navbar links container */
+
 .navbar ul {
-  list-style: none; /* Remove bullet points */
+  list-style: none; 
   margin: 0;
   padding: 0;
-  display: flex; /* Display links in a row */
-  justify-content: center; /* Center the links */
-  flex-grow: 1; /* Allow the links to take up available space */
-  gap: 25px; /* Add spacing between links */
+  display: flex; 
+  justify-content: center; 
+  flex-grow: 1; 
+  gap: 25px; 
 }
 
-/* Navbar links */
 .navbar ul li a {
-  text-decoration: none; /* Remove underline */
-  color: #ecf0f1; /* Light text color */
+  text-decoration: none; 
+  color: #ecf0f1; 
   font-size: 18px;
   font-weight: 500;
-  padding: 10px 15px; /* Add padding for clickable area */
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  padding: 10px 15px;
+  border-radius: 5px; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Hover effect for links */
+
 .navbar ul li a:hover {
-  background-color: #1abc9c; /* Green background */
-  color: #ffffff; /* White text on hover */
+  background-color: #1abc9c; 
+  color: #ffffff; 
 }
 
-/* Active link styling */
 .navbar ul li a.active {
-  background-color: #1abc9c; /* Highlight active link with green */
-  color: #ffffff; /* White text */
+  background-color: #1abc9c; 
+  color: #ffffff; 
 }
 
-/* Responsive navbar for smaller screens */
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
+    flex-direction: column; 
+    align-items: center; 
   }
 
   .navbar ul {
-    flex-direction: column; /* Stack links vertically */
-    gap: 15px; /* Reduce spacing between links */
+    flex-direction: column;
+    gap: 15px; 
   }
 }
 
-/* Logout button */
 .logout-button {
-  padding: 8px 15px; /* Adjust padding for a compact size */
-  background-color: #e74c3c; /* Red background */
-  color: #ffffff; /* White text */
+  padding: 8px 15px; 
+  background-color: #e74c3c;
+  color: #ffffff; 
   border: none;
-  border-radius: 5px; /* Rounded corners */
-  font-size: 14px; /* Set a consistent font size */
+  border-radius: 5px; 
+  font-size: 14px; 
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-  width: auto; /* Ensure the button does not stretch */
-  display: inline-block; /* Prevent the button from taking up extra space */
-  text-align: center; /* Center the text inside the button */
-  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.3s ease; 
+  width: auto; 
+  display: inline-block; 
+  text-align: center; 
+  white-space: nowrap; 
 }
 
 .logout-button:hover {
-  background-color: #c0392b; /* Darker red on hover */
+  background-color: #c0392b; 
 }
 @media (min-width: 1200px) {
   .navbar {
@@ -99,7 +96,7 @@
   }
 }
 
-/* Medium screens (992px to 1199px) */
+
 @media (max-width: 1199px) {
   .navbar ul {
     gap: 15px;
@@ -110,7 +107,7 @@
   }
 }
 
-/* Tablet screens (768px to 991px) */
+
 @media (max-width: 991px) {
   .navbar {
     padding: 12px 20px;
@@ -121,7 +118,7 @@
   }
 }
 
-/* Mobile landscape (576px to 767px) */
+
 @media (max-width: 767px) {
   .navbar {
     flex-direction: column;
@@ -157,7 +154,7 @@
   }
 }
 
-/* Mobile portrait (575px and below) */
+
 @media (max-width: 575px) {
   .navbar {
     border-radius: 0;
@@ -169,14 +166,13 @@
   }
 }
 
-/* For devices that support hover */
+
 @media (hover: hover) {
   .navbar ul li a:hover {
     transform: translateY(-2px);
   }
 }
 
-/* For dark mode preference */
 @media (prefers-color-scheme: dark) {
   .navbar {
     background-color: #1a2634;

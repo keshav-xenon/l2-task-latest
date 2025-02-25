@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/search.css"; // Add custom styles for the search page
+import "../styles/search.css"; 
 
 const SearchBook = () => {
   const [title, setTitle] = useState("");
@@ -12,11 +12,11 @@ const SearchBook = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
 
-    const email = localStorage.getItem("email"); // Reader email from local storage
+    const email = localStorage.getItem("email"); 
     try {
       const response = await axios.get("http://localhost:8080/reader/search-book", {
         headers: {
-          Authorization: `Bearer ${email}`, // Pass email as Bearer token
+          Authorization: `Bearer ${email}`, 
         },
         params: {
           title,

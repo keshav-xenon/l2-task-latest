@@ -15,11 +15,8 @@ const ReaderProfile = () => {
   const fetchReaderData = async () => {
     try {
       const email = localStorage.getItem("email");
-      // Fetch issued books
       const issuedResponse = await api.get(`/reader/issued-books/${email}`);
       setIssuedBooks(issuedResponse.data);
-
-      // Fetch request history
       const historyResponse = await api.get(`/reader/request-history/${email}`);
       setRequestHistory(historyResponse.data);
 

@@ -16,7 +16,6 @@ const Login = () => {
       return;
     }
 
-    // Save user details in localStorage
     localStorage.setItem("email", email);
     localStorage.setItem("role", role);
 

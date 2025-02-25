@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/return.css"; // Add custom styles for the return page
+import "../styles/return.css"; 
 
 const ReturnBook = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Fetch the list of borrowed books
     const fetchBorrowedBooks = async () => {
-      const email = localStorage.getItem("email"); // Reader email from local storage
+      const email = localStorage.getItem("email"); 
       try {
         const response = await axios.get("http://localhost:8080/reader/borrowed-books", {
           headers: {
-            Authorization: `Bearer ${email}`, // Pass email as Bearer token
+            Authorization: `Bearer ${email}`, 
           },
         });
         setBorrowedBooks(response.data);
@@ -40,7 +39,7 @@ const ReturnBook = () => {
         }
       );
       setMessage(response.data.message);
-      setBorrowedBooks(borrowedBooks.filter((book) => book.IssueID !== issueID)); // Remove returned book
+      setBorrowedBooks(borrowedBooks.filter((book) => book.IssueID !== issueID)); 
     } catch (error) {
       setMessage(
         error.response?.data?.error || "Failed to return the book. Try again."

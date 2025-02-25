@@ -21,11 +21,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Login and Register Routes without background */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         
-        {/* Admin Routes with background */}
+        {/* Admin Routes */}
         <Route
           path="/admin/*"
           element={
@@ -50,7 +49,7 @@ const App = () => {
           }
         />
 
-        {/* Reader Routes with background */}
+        {/* Reader Routes*/}
         <Route
           path="/reader/*"
           element={

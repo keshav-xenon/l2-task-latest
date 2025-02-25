@@ -14,7 +14,7 @@ const AddBook = () => {
   const handleAddBook = async (e) => {
     e.preventDefault();
 
-    const email = localStorage.getItem("email"); // Get admin email from local storage
+    const email = localStorage.getItem("email");
     const bookData = {
       ISBN: isbn,
       Title: title,
@@ -31,7 +31,7 @@ const AddBook = () => {
         bookData,
         {
           headers: {
-            Authorization: `Bearer ${email}`, // Pass email as Bearer token
+            Authorization: `Bearer ${email}`, 
           },
         }
       );

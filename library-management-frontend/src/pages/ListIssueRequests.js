@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/list.css"; // Add custom styles for the list
+import "../styles/list.css"; 
 
 const ListIssueRequests = () => {
   const [requests, setRequests] = useState([]);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Fetch issue requests from the backend
     const fetchRequests = async () => {
-      const email = localStorage.getItem("email"); // Admin email from local storage
+      const email = localStorage.getItem("email"); 
       try {
         const response = await axios.get(
           "http://localhost:8080/admin/list-issue-requests",
           {
             headers: {
-              Authorization: `Bearer ${email}`, // Pass email as Bearer token
+              Authorization: `Bearer ${email}`, 
             },
           }
         );
@@ -43,7 +42,7 @@ const ListIssueRequests = () => {
         }
       );
       setMessage(response.data.message);
-      setRequests(requests.filter((req) => req.ReqID !== reqID)); // Remove approved request
+      setRequests(requests.filter((req) => req.ReqID !== reqID));
     } catch (error) {
       setMessage(
         error.response?.data?.error || "Failed to approve the request"
@@ -64,7 +63,7 @@ const ListIssueRequests = () => {
         }
       );
       setMessage(response.data.message);
-      setRequests(requests.filter((req) => req.ReqID !== reqID)); // Remove rejected request
+      setRequests(requests.filter((req) => req.ReqID !== reqID)); 
     } catch (error) {
       setMessage(
         error.response?.data?.error || "Failed to reject the request"

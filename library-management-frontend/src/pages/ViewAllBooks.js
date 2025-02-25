@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/books.css"; // Add custom styles for the books page
+import "../styles/books.css"; 
 
 const ViewAllBooks = () => {
   const [books, setBooks] = useState([]);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Fetch all books from the backend
     const fetchBooks = async () => {
-      const email = localStorage.getItem("email"); // Reader email from local storage
+      const email = localStorage.getItem("email");
       try {
         const response = await axios.get("http://localhost:8080/reader/search-book", {
           headers: {
-            Authorization: `Bearer ${email}`, // Pass email as Bearer token
+            Authorization: `Bearer ${email}`,
           },
         });
         setBooks(response.data);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/form.css"; // Reuse the form styles
+import "../styles/form.css";
 
 const RaiseIssueRequest = () => {
   const [bookID, setBookID] = useState("");
@@ -9,11 +9,11 @@ const RaiseIssueRequest = () => {
   const handleRaiseRequest = async (e) => {
     e.preventDefault();
 
-    const email = localStorage.getItem("email"); // Reader email from local storage
+    const email = localStorage.getItem("email");
     const requestData = {
       BookID: bookID,
-      ReaderID: email, // Assuming email is used as ReaderID
-      RequestDate: new Date().toISOString().split("T")[0], // Current date
+      ReaderID: email, 
+      RequestDate: new Date().toISOString().split("T")[0],
     };
 
     try {
@@ -22,7 +22,7 @@ const RaiseIssueRequest = () => {
         requestData,
         {
           headers: {
-            Authorization: `Bearer ${email}`, // Pass email as Bearer token
+            Authorization: `Bearer ${email}`, 
           },
         }
       );

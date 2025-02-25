@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/register.css"; // Custom styles for the register page
-
+import "../styles/register.css"; 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,14 +15,12 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Validate required fields
     if (!name || !email || !role || !libID) {
       setError("Please fill in all required fields.");
       return;
     }
 
     try {
-      // Call the backend API to create a user
       const response = await axios.post("http://localhost:8080/create-user", {
         name,
         email,
@@ -35,7 +32,6 @@ const Register = () => {
       if (response.status === 200) {
         setSuccess("User registered successfully!");
         setError("");
-        // Redirect to login page after successful registration
         setTimeout(() => navigate("/"), 2000);
       }
     } catch (err) {
