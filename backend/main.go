@@ -11,9 +11,6 @@ import (
 func main() {
 
 	database.ConnectDatabase()
-	router := gin.Default()
-	api := router.Group("/api")
-	routes.AddMigrationRoutes(api, database.DB)
 
 	r := gin.Default()
 
