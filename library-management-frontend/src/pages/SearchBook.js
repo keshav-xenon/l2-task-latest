@@ -75,7 +75,9 @@ const SearchBook = () => {
                 <th>Title</th>
                 <th>Author</th>
                 <th>Publisher</th>
+                <th>ISBN</th>
                 <th>Available Copies</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -84,7 +86,9 @@ const SearchBook = () => {
                   <td>{book.Title}</td>
                   <td>{book.Authors}</td>
                   <td>{book.Publisher}</td>
+                  <td>{book.ISBN}</td>
                   <td>{book.AvailableCopies}</td>
+                  
                 </tr>
               ))}
             </tbody>
